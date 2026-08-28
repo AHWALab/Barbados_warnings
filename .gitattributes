@@ -1,0 +1,9 @@
+# store text as LF whatever platform commits, so the repository is
+# identical whether it is committed from Windows or from Linux
+* text=auto eol=lf
+
+# binary assets, never line ending converted
+*.png binary
+*.gif binary
+*.ico binary
+*.gz binary
