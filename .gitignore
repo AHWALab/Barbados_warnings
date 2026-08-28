@@ -1,0 +1,8 @@
+# operating system cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# superseded: the cross product links are absolute in these repositories,
+# so the sibling folder shim is not used here
+assets/js/xlinks.js

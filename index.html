@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UQ Flood Potential. Barbados</title>
+<meta name="description" content="Uncertainty quantified flood potential for Barbados from the TITO EF5 ensemble, 16 to 17 August 2026, 30 m island domain. Hazard and impact adjusted views, ensemble percentiles, rainfall and STREAM-Sat analysis layers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1L15 14H1z' fill='%23F4802A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/vendor/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <div>
+      <h1>UQ Flood Potential</h1>
+      <p class="head-sub">Barbados, 30 m island domain</p>
+    </div>
+    <div class="head-meta">
+      <span>Hindcast 16 to 17 August 2026, 48 hourly cycles</span>
+      <span>50 member StormLab forecast, 10 member STREAM-Sat analysis</span>
+      <span><a href="https://ahwalab.github.io/Barbados_fim/">Flood maps</a> &nbsp; <a href="https://ahwalab.github.io/Barbados_IFB/">Impact forecast</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="context-band">
+  <div class="wrap">
+    This product shows <strong>flood potential</strong>, not an official warning. Deciding
+    warning levels is the mandate of the national institutions. Classes are defined on maximum
+    unit streamflow in m3/s per km2, mapped as the ensemble 90th percentile, and clustered into
+    zones. View A shows the hazard alone; View B folds in population density and settlement
+    proximity through a likelihood by impact matrix.
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="controls" aria-label="View controls">
+    <div class="ctl-group">
+      <span class="ctl-label">View</span>
+      <div class="seg" id="seg-view">
+        <button data-v="A" class="on">A. Hazard</button>
+        <button data-v="B">B. Impact adjusted</button>
+      </div>
+    </div>
+    <div class="ctl-group">
+      <span class="ctl-label">Class bands</span>
+      <div class="seg" id="seg-band">
+        <button data-b="bb" class="on">Barbados calibrated</button>
+        <button data-b="gt">Guatemala / FLASH</button>
+      </div>
+    </div>
+    <div class="ctl-group">
+      <span class="ctl-label">Background field</span>
+      <select id="fieldsel" class="picker" aria-label="Background raster field"></select>
+    </div>
+    <div class="ctl-group">
+      <button class="toggle on" id="zonetoggle">Zones</button>
+      <button class="toggle on" id="aoctoggle">Saint Thomas</button>
+    </div>
+    <div class="ctl-group">
+      <span class="ctl-label">Cycle</span>
+      <button class="step" id="prev" title="Previous cycle">&lt;</button>
+      <select id="cycsel" class="picker" aria-label="Forecast cycle"></select>
+      <button class="step" id="next" title="Next cycle">&gt;</button>
+      <button class="toggle" id="play">Play</button>
+    </div>
+  </section>
+
+  <section class="clock" id="clock" aria-label="Cycle picker by day and hour"></section>
+
+  <main class="main">
+    <div class="map-col">
+      <div class="mapbox" id="mapbox"><div id="map"></div></div>
+      <div class="map-caption" id="bandnote"></div>
+      <div class="map-caption" id="zonecount"></div>
+    </div>
+
+    <aside class="side">
+      <div class="cyc-head">
+        <h2 id="cyctitle"></h2>
+        <span class="badge" id="badge"></span>
+      </div>
+      <dl class="kv" id="kv"></dl>
+      <table class="st" id="sttable"></table>
+      <p class="note"><strong>Confidence</strong> is read from the probability that unit
+        streamflow reaches the first band: HIGH at 50 percent or more, MED 20 to 50, LOW 5 to 20.
+        It controls fill opacity, and low confidence zones are drawn with a dashed edge.
+        A zone must hold at least 3 of 50 members above the first band and cover at least
+        0.32 km2, the Guatemala minimum zone area. A zone takes the highest class that covers
+        at least a tenth of it, and reports the worst class present separately, so one hot cell
+        cannot set the class of a large zone.</p>
+      <div class="flag">
+        <strong>Read this before interpreting.</strong>
+        <br>1. This event is small. The whole island peaks at 1.7 m3/s per km2 in the
+        analysis ensemble and 0.9 in the forecast ensemble, so on the Guatemala bands almost
+        everything falls in No signal or Low. The Barbados calibrated bands
+        (0.25, 0.40, 0.50, 0.70) exist to make the spatial pattern readable in training.
+        Compare the two and note that only the first set is comparable with the Guatemala
+        product.
+        <br>2. The forecast rainfall grids (qpfaccum) are empty in every member of this run,
+        so only the analysis rainfall (qpeaccum) is offered as a rainfall layer.
+        <br>3. At the peak cycle, 17 August 14:00, the whole island is one connected signal
+        area of 432 km2, so the calibrated view returns a single zone holding 252,600 people.
+        That is the honest answer for a broad, shallow signal: read the credible signal area
+        with the zone count, and use the per pixel class raster underneath to see the pattern
+        inside the zone.
+        <br>4. In the flood inundation product, cycle 17 August 15:00 carries rasters on the
+        Saint Michael window rather than Saint Thomas. That defect is in the FIM output of this
+        run and does not affect the fields shown here, which are read from the EF5 ensemble
+        directly.
+      </div>
+    </aside>
+  </main>
+
+  <section class="timeline">
+    <div class="tl-head">
+      <h3>Event timeline</h3>
+      <span class="tl-key">
+        <i class="k-line"></i>forecast ensemble p90, island maximum
+        <i class="k-ss"></i>STREAM-Sat analysis member maximum
+        <i class="k-trig"></i>Saint Thomas FIM trigger
+        <i class="k-cur"></i>selected cycle
+      </span>
+    </div>
+    <div class="stripwrap">
+      <svg id="strip" role="img" aria-label="Maximum unit streamflow per forecast cycle"></svg>
+      <div class="tooltip" id="tip" style="display:none"></div>
+    </div>
+    <div class="tl-cap">Times are UTC. Dotted horizontal lines are the class bands of the
+      selected band set. Click anywhere on the strip to jump to that cycle.</div>
+  </section>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <div>
+      <strong>AHWA Laboratory, The University of Iowa</strong><br>
+      EWS-F project, funded by the WMO
+    </div>
+    <div class="foot-right">
+      TITO EF5 CREST ensemble, StormLab forecast and STREAM-Sat analysis.<br>
+      Flood potential guidance for training. Not an operational warning product.
+    </div>
+  </div>
+</footer>
+
+<script src="assets/vendor/leaflet.js"></script>
+<script src="assets/data/cycles.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
