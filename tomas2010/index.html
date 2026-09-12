@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UQ Flood Potential. Barbados, Hurricane Tomas 2010</title>
+<meta name="description" content="Uncertainty quantified flood potential for Barbados from the TITO EF5 ensemble, forecast cycle of 30 October 2010 00:00 UTC for Hurricane Tomas, 30 m island domain, FLASH class bands.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1L15 14H1z' fill='%23F4802A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/vendor/leaflet.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>window.EVENT_DIR = "";</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <div>
+      <h1>UQ Flood Potential</h1>
+      <p class="head-sub">Barbados, 30 m island domain. Hurricane Tomas, 29 to 30 October 2010</p>
+    </div>
+    <div class="head-meta">
+      <span>Forecast cycle 30 October 2010 00:00 UTC, 24 h horizon</span>
+      <span>50 member forecast ensemble on WRF 3 km rainfall, IMERG warm up</span>
+      <span><a href="../">Both events</a> &nbsp; <a href="../aug2026/">August 2026 case</a> &nbsp;
+        <a href="https://ahwalab.github.io/Barbados_fim/tomas2010/">Flood maps</a> &nbsp;
+        <a href="https://ahwalab.github.io/Barbados_IFB/tomas2010/">Impact forecast</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="context-band">
+  <div class="wrap">
+    This product shows <strong>flood potential</strong>, not an official warning. Deciding
+    warning levels is the mandate of the national institutions. Classes follow the FLASH
+    scheme on maximum unit streamflow in m3/s per km2, read at the ensemble 90th percentile
+    and clustered into zones. View A shows the hazard alone; View B folds in population
+    density and settlement proximity through a likelihood by impact matrix.
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="controls" aria-label="View controls">
+    <div class="ctl-group">
+      <span class="ctl-label">View</span>
+      <div class="seg" id="seg-view">
+        <button data-v="A" class="on">A. Hazard</button>
+        <button data-v="B">B. Impact adjusted</button>
+      </div>
+    </div>
+    <div class="ctl-group">
+      <span class="ctl-label">Background field</span>
+      <select id="fieldsel" class="picker" aria-label="Background raster field"></select>
+    </div>
+    <div class="ctl-group">
+      <button class="toggle on" id="zonetoggle">Zones</button>
+      <button class="toggle on" id="aoctoggle">Parishes</button>
+    </div>
+    <div class="ctl-group">
+      <span class="ctl-label">Cycle</span>
+      <span class="static">30 October 2010, 00:00 UTC, the only cycle of this case</span>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="map-col">
+      <div class="mapbox" id="mapbox"><div id="map"></div></div>
+      <div class="map-caption" id="bandnote"></div>
+      <div class="map-caption" id="zonecount"></div>
+    </div>
+
+    <aside class="side">
+      <div class="cyc-head">
+        <h2 id="cyctitle"></h2>
+        <span class="badge" id="badge"></span>
+      </div>
+      <dl class="kv" id="kv"></dl>
+      <table class="st" id="sttable"></table>
+      <h3 class="sub">By parish</h3>
+      <div class="tablewrap"><table class="pt" id="parishtable"></table></div>
+      <p class="note"><strong>Confidence</strong> is read from the probability that unit
+        streamflow reaches the first band: HIGH at 50 percent or more, MED 20 to 50, LOW 5 to 20.
+        A zone must hold at least 3 of 50 members above the first band and cover at least
+        0.32 km2, the Guatemala minimum zone area. A zone takes the highest class that covers
+        at least a tenth of it, and reports the worst class present separately.</p>
+      <div class="flag">
+        <strong>Read this before interpreting.</strong>
+        <br>1. This is a hurricane. The 24 h rainfall of the ensemble averages 229 mm over the
+        island and every member reaches unit streamflow far above 4 m3/s per km2, so on the
+        FLASH bands the ensemble p90 puts 98 percent of the land in Very high and the
+        credible signal covers the whole island. The zone product returns one island wide
+        zone. That is the correct reading of the bands for an event of this size.
+        <br>2. The structure of the event is in the continuous fields. Switch the background to
+        the probability of reaching 4, the p90 or the member maximum: the south and west run
+        higher than the north and east, and the 3 km blocks of the WRF rainfall are visible.
+        <br>3. Every one of the eleven parishes passes the FIM trigger of 1.0 by a wide margin,
+        so the flood inundation product ran for the whole island. The flood maps and the
+        impact forecast carry the spatial detail that the class map cannot.
+        <br>4. Rainfall entered the model through the analysis path, so the accumulation shown
+        is the IMERG warm up of 16.8 mm plus the 24 h forecast rain of each member.
+      </div>
+    </aside>
+  </main>
+
+  <section class="timeline">
+    <div class="tl-head">
+      <h3>Ensemble spread</h3>
+      <span class="tl-key">island maximum unit streamflow per member, coloured by its FLASH class</span>
+    </div>
+    <div class="stripwrap">
+      <svg id="strip" role="img" aria-label="Island maximum unit streamflow per ensemble member"></svg>
+      <div class="tooltip" id="tip" style="display:none"></div>
+    </div>
+    <div class="tl-cap">Member 1 is the unperturbed WRF rainfall. Members 2 to 50 are perturbations
+      of it: a spatially correlated multiplier between 0.7 and 1.3, a shift of up to 15 km and a
+      time lag of up to 3 h. Hover a bar for the member statistics.</div>
+  </section>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <div>
+      <strong>AHWA Laboratory, The University of Iowa</strong><br>
+      EWS-F project, funded by the WMO
+    </div>
+    <div class="foot-right">
+      TITO EF5 CREST ensemble, WRF 3 km hindcast rainfall, IMERG warm up.<br>
+      Flood potential guidance for training. Not an operational warning product.
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/vendor/leaflet.js"></script>
+<script src="data/cycles.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -189,3 +189,57 @@ svg#strip { width: 100%; height: 130px; display: block; cursor: pointer; }
 
 /* keep 30 m cells crisp when zoomed in */
 img.leaflet-image-layer { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* additions for the two event site, September 2026 */
+.eventtag { font-size: 11.5px; color: var(--mute); border: 1px solid var(--line);
+  border-left: 3px solid var(--blue); padding: 4px 10px; background: #fbfcfd; border-radius: 3px; }
+.flashbar { height: 12px; display: flex; border-radius: 2px; overflow: hidden;
+  border: 1px solid var(--line); margin: 4px 0 2px; }
+.flashbar div { flex: 1; }
+.flashlabels { display: flex; justify-content: space-between; font-size: 10.5px;
+  color: var(--mute); margin: 0 0 6px; }
+.flashlabels b { color: var(--ink); font-weight: 600; }
+.rampbox { display: flex; height: 11px; border-radius: 2px; overflow: hidden;
+  border: 1px solid var(--line); margin-top: 3px; }
+.rampbox div { flex: 1; }
+.ramplab { display: flex; font-size: 9.5px; color: var(--mute); margin-top: 1px; }
+.ramplab span { flex: 1; text-align: left; }
+.ramplab span.last { text-align: right; flex: 0 0 auto; }
+.rampunit { font-size: 10px; color: var(--mute); }
+.lg-note { margin-top: 3px; color: var(--mute); font-size: 10.5px; }
+.lg-sub { margin-top: 7px; font-size: 10.5px; color: var(--mute); text-transform: uppercase;
+  letter-spacing: 0.05em; }
+.map-legend { max-width: 250px; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px;
+  vertical-align: -1px; }
+table.pt { border-collapse: collapse; width: 100%; font-size: 11.5px; margin-bottom: 10px; }
+table.pt th, table.pt td { border-bottom: 1px solid var(--line); padding: 3px 5px; text-align: right;
+  font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.pt th:first-child, table.pt td:first-child { text-align: left; }
+table.pt td:nth-child(4) { text-align: left; }
+table.pt th { color: var(--mute); font-weight: 600; }
+.side h3.sub { font-size: 12px; margin: 12px 0 4px; font-weight: 600; color: var(--mute);
+  text-transform: uppercase; letter-spacing: 0.05em; }
+rect.mbar:hover { stroke: #1a2733; stroke-width: 2; }
+.head-meta .lang { display: inline-block; border: 1px solid #3d6485; border-radius: 3px;
+  padding: 2px 9px; color: #fff; text-decoration: none; }
+.portal-card .stats { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 2px; }
+.portal-card .stat { border-radius: 5px; padding: 5px 9px; font-size: 12px; font-weight: 700;
+  color: rgba(0,0,0,0.65); background: var(--panel); }
+.portal-card .stat small { display: block; font-weight: 600; font-size: 10px; opacity: 0.8; }
+.portal-card .badge { margin-left: 8px; vertical-align: 2px; }
+.portal-card.suggested { border-color: var(--blue); }
+.landing .flashbar { max-width: 520px; height: 10px; margin-top: 18px; }
+.landing .flashlabels { max-width: 520px; }
+.landing h3.sec { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--mute); margin: 26px 0 10px; }
+.mrow { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.mrow span { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 4px; color: rgba(0,0,0,0.65); }
+.controls .static { font-size: 13px; color: var(--ink); padding: 6px 0; }
+
+.kv { grid-template-columns: auto minmax(0, 1fr); }
+.kv dt { white-space: nowrap; }
+.side { flex: 0 1 400px; min-width: 300px; max-width: 100%; }
+.side .tablewrap { overflow-x: auto; }
+table.pt th, table.pt td { white-space: normal; }
+table.pt td:first-child { white-space: nowrap; }
