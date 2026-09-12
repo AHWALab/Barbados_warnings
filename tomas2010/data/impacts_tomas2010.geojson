@@ -1,0 +1,282 @@
+{
+ "type": "FeatureCollection",
+ "name": "Reported impacts of Hurricane Tomas in Barbados, 29 to 30 October 2010",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.6084,
+     13.0779
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-01",
+    "place": "Drill Hall Beach, Garrison coast",
+    "parish": "Christ Church",
+    "precision": "point",
+    "radius_km": 0,
+    "category": "flood",
+    "category_label": "Flooding",
+    "date_utc": "2010-10-30",
+    "impact": "Coastal road under sea water and standing water, trees down",
+    "description": "Compendium entry: cyclone, stagnant water, near the coast; infrastructure impacted: roads, trees. The compendium flags that surge and flash flooding, and wind and flooding, cannot be separated in the reports. The video shows the Garrison coast road during the passage.",
+    "confidence": "Medium",
+    "sources": [
+     {
+      "name": "SIDS Flash Flood Compendium, FFC sheet (Hurricane Tomas rows)",
+      "url": ""
+     },
+     {
+      "name": "Video, Barbados storm Tomas (Stephen Mendes)",
+      "url": "https://www.youtube.com/watch?v=GRDnIA9uHAQ"
+     }
+    ],
+    "mapped": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.4623,
+     13.1363
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-02",
+    "place": "Saint Philip, parish wide",
+    "parish": "Saint Philip",
+    "precision": "parish",
+    "radius_km": 6.6,
+    "category": "flood",
+    "category_label": "Flooding",
+    "date_utc": "2010-10-30",
+    "impact": "Flooded land and roads, livestock affected",
+    "description": "Compendium entry for the parish: cyclone, stagnant water, surface runoff; livestock impacted. Location is the parish centroid with a 0.06 degree radius, as recorded in the compendium.",
+    "confidence": "Medium",
+    "sources": [
+     {
+      "name": "SIDS Flash Flood Compendium, FFC sheet (Hurricane Tomas rows)",
+      "url": ""
+     },
+     {
+      "name": "Video, Flooding In St.Philip Tropical Storm Tomas (spidude)",
+      "url": "https://www.youtube.com/watch?v=bHp1VFQ-uEc"
+     }
+    ],
+    "mapped": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.4902,
+     13.105
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-03",
+    "place": "Trinity Animal Clinic, Woodbourne",
+    "parish": "Saint Philip",
+    "precision": "point",
+    "radius_km": 0,
+    "category": "flood",
+    "category_label": "Flooding",
+    "date_utc": "2010-10-31",
+    "impact": "Animal clinic flooded, animals rescued with a dinghy",
+    "description": "DesInventar record, event FLOOD, parish Saint Philip, location Woodbourne, dated 31 October 2010: Trinity Animal Clinic was flooded and the animals had to be rescued using a dinghy. Coordinates from the clinic's OpenStreetMap entry.",
+    "confidence": "High",
+    "sources": [
+     {
+      "name": "SIDS Flash Flood Compendium, DesInventar Barbados sheet, serial 2010-00097",
+      "url": ""
+     }
+    ],
+    "mapped": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.4874,
+     13.0773
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-04",
+    "place": "Grantley Adams International Airport",
+    "parish": "Christ Church",
+    "precision": "point",
+    "radius_km": 0,
+    "category": "observation",
+    "category_label": "Observation",
+    "date_utc": "2010-10-30",
+    "impact": "294 mm of rain during the passage, gust of 91 knots, pressure 983 mb",
+    "description": "NHC report: 11.56 inches (294 mm) of rain at the airport during the passage; sustained wind 46 knots with a gust to 91 knots at 07:55 UTC; minimum pressure 983 mb at 09:00 UTC on 30 October, when the centre crossed the south coast. Flights cancelled (LIAT, American Airlines).",
+    "confidence": "High",
+    "sources": [
+     {
+      "name": "NHC Tropical Cyclone Report, Hurricane Tomas (AL212010)",
+      "url": "https://www.nhc.noaa.gov/data/tcr/AL212010_Tomas.pdf"
+     },
+     {
+      "name": "UWI EKACDM, Tropical Storm Tomas 2010",
+      "url": "https://www.uwi.edu/ekacdm/node/89"
+     }
+    ],
+    "mapped": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.6424,
+     13.2501
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-05",
+    "place": "Speightstown and Saint Peter",
+    "parish": "Saint Peter",
+    "precision": "parish",
+    "radius_km": 5,
+    "category": "wind",
+    "category_label": "Wind damage",
+    "date_utc": "2010-10-30",
+    "impact": "Parish reported among the hardest hit: roofs lost, trees and lines down",
+    "description": "The Daily Nation headline of 1 November 2010 reads Tomas batters St Peter; the parish is cited as one of the worst affected for roof loss. No flood specific detail was retrievable. Point placed on Speightstown with a 5 km radius for the parish.",
+    "confidence": "Medium",
+    "sources": [
+     {
+      "name": "Daily Nation, 1 November 2010, Tomas batters St Peter (headline cited in the Wikipedia article on Hurricane Tomas; the archive page did not load in September 2026)",
+      "url": "https://www.nationnews.com/2010/11/01/tomas-batters-st-peter/"
+     }
+    ],
+    "mapped": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.5843,
+     13.0924
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-06",
+    "place": "Wildey",
+    "parish": "Saint Michael",
+    "precision": "district",
+    "radius_km": 1,
+    "category": "wind",
+    "category_label": "Wind damage",
+    "date_utc": "2010-10-30",
+    "impact": "Three houses flattened, nineteen members of one family displaced",
+    "description": "Reader report on Barbados Underground: a Wildey residence where three houses were flattened, affecting nineteen family members. Single unverified source.",
+    "confidence": "Low",
+    "sources": [
+     {
+      "name": "Barbados Underground, 6 November 2010, reader comment",
+      "url": "https://barbadosunderground.net/2010/11/06/barbadians-quibble-about-tomas-while-haitians-st-lucians-vincentians-suffer/"
+     }
+    ],
+    "mapped": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.5627,
+     13.1762
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-07",
+    "place": "Barbados, island wide",
+    "parish": "All parishes",
+    "precision": "country",
+    "radius_km": 0,
+    "category": "summary",
+    "category_label": "Island summary",
+    "date_utc": "2010-10-30",
+    "impact": "About 1,000 houses damaged (estimates to 1,500), 200 to be replaced, power out for 75 to 80 percent, no deaths",
+    "description": "Roofs, trees and power lines down island wide; the Department of Emergency Management had logged 352 house damage reports by 14:00 on 31 October and about 1,000 damaged houses were confirmed by mid November, with estimates of 1,400 to 1,500 and 200 to be replaced (the NHC report gives about 1,200). Barbados Light and Power lost 75 to 80 percent of its service, which reduced the water supply in several areas; 91 blocked roads had been cleared by 31 October; shelters opened in schools and churches; no casualties. Repair bill projected at BBD 37 million; CCRIF payout USD 8.5 million. Compendium: houses, hospitals, schools, water supply, power lines, roads, trees and cars impacted, 501 to 1,000 houses damaged, GPM IMERG country accumulation about 400 mm.",
+    "confidence": "High",
+    "sources": [
+     {
+      "name": "NHC Tropical Cyclone Report, Hurricane Tomas (AL212010)",
+      "url": "https://www.nhc.noaa.gov/data/tcr/AL212010_Tomas.pdf"
+     },
+     {
+      "name": "CDEMA Situation Report 1, 30 October 2010",
+      "url": "https://www.cdema.org/virtuallibrary/index.php/reports-notes/sit-reports/2010-2015/452-situation-report-1-tropical-storm-tomas-impacts-barbados-strengthens-to-category-1-hurricane-and-impacts-saint-vincent-a-the-grenadines-saint-lucia-and-dominica"
+     },
+     {
+      "name": "CDEMA Situation Report 2, 31 October 2010",
+      "url": "https://www.cdema.org/virtuallibrary/index.php/reports-notes/sit-reports/2010-2015/451-situation-report-2-hurricane-tomas-severely-impacts-saint-lucia-and-caused-damage-to-saint-vincent-and-the-grenadines-and-barbados-as-at-200-pm"
+     },
+     {
+      "name": "CDEMA summary of impact and needs assessment, Hurricane Tomas",
+      "url": "https://www.cdema.org/HurricaneTomasSummaryofImpactandNeedsAssessment.pdf"
+     },
+     {
+      "name": "Daily Nation, 13 November 2010, $37m Tomas bill",
+      "url": "https://nationnews.com/2010/11/13/37m-tomas-bill/"
+     },
+     {
+      "name": "Al Jazeera, 31 October 2010, Hurricane may add to Haiti woes",
+      "url": "https://www.aljazeera.com/news/2010/10/31/hurricane-may-add-to-haiti-woes"
+     },
+     {
+      "name": "SIDS Flash Flood Compendium, FFC sheet (Hurricane Tomas rows)",
+      "url": ""
+     }
+    ],
+    "mapped": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -59.5627,
+     13.1762
+    ]
+   },
+   "properties": {
+    "id": "BB-TOMAS-08",
+    "place": "Barbados, island wide",
+    "parish": "All parishes",
+    "precision": "country",
+    "radius_km": 0,
+    "category": "flood",
+    "category_label": "Flooding",
+    "date_utc": "2010-10-30",
+    "impact": "Flood event record covering the whole island, 30 to 31 October 2010",
+    "description": "The compendium's Groundsource sheet lists one flood event for 30 to 31 October 2010 with an area of 469.6 km2 spanning every parish, without finer detail.",
+    "confidence": "Medium",
+    "sources": [
+     {
+      "name": "SIDS Flash Flood Compendium, Groundsource Barbados sheet",
+      "url": ""
+     }
+    ],
+    "mapped": false
+   }
+  }
+ ]
+}

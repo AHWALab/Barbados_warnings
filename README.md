@@ -69,6 +69,19 @@ south 13.04375, west -59.652083, east -59.419028.
 2. **August 2026 barely reaches the first band.** The island peaks at 1.7 m3/s per km2 in the
    analysis ensemble and 0.9 in the forecast ensemble. No zone reaches Moderate.
 
+## Reported impacts, Tomas
+
+The Tomas page carries a "Reported impacts" layer: six mapped records and an island summary
+compiled from the SIDS Flash Flood Compendium (FFC, DesInventar and Groundsource sheets), the
+NHC tropical cyclone report, CDEMA situation reports and press reports, with the sources linked
+in every popup. Categories: flooding (Drill Hall Beach, Saint Philip parish, the Trinity Animal
+Clinic at Woodbourne), wind damage (Saint Peter, Wildey) and the Grantley Adams observation
+(294 mm, gust 91 knots). Tomas hit Barbados mostly through wind, and the compendium itself notes
+that surge, flash flooding and wind damage are not separated in the reports, so the flood record
+is thin; parish and district level records sit at the centroid with a dashed circle. The table is
+`tomas2010/data/impacts_tomas2010.csv` (also GeoJSON), the layer code `assets/js/impacts.js`, the
+payload `tomas2010/data/impacts.js`. The August 2026 hindcast has no documented impacts.
+
 ## Basemap key
 
 CARTO raster basemaps have required an API key since August 2026. The key issued to the

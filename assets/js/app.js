@@ -123,8 +123,8 @@ function updateLegend() {
     h += "<div class='lg-note'>Raster shows the class per pixel; zone fills are " +
          "lightened so both read at once.</div>";
   }
-  if (f.file) h += "<div class='lg-note'>Zone fills are lightened while a field is shown. " +
-    "Choose None to read the zones alone.</div>";
+  if (f.file) h += "<div class='lg-note'>Zone fills are lightened so the field reads through them; " +
+    "use the Zones button to hide or show them.</div>";
   var el = document.getElementById("maplegend");
   if (el) el.innerHTML = h;
 }
